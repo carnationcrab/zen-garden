@@ -75,7 +75,7 @@ void close()
 
 int main( int argc, char* args[] )
 {
-    // start up SDL and create window
+    // start up SDL, create window
     if( !init() )
     {
         printf( "Failed to initialize!\n" );
@@ -91,24 +91,15 @@ int main( int argc, char* args[] )
         {
             // apply bg image
             SDL_BlitSurface(gImageToLoad, NULL, gScreenSurface, NULL );
-
-            // update the surface
             SDL_UpdateWindowSurface( gWindow );
 
             // hack to get window to stay up
-            SDL_Event e; bool quit = false;
-            while( quit == false )
-            {
-                while( SDL_PollEvent( &e ))
-                {
-                    if( e.type == SDL_QUIT )
-                        quit = true;
-                }
-            }
+            // THIS HAS GOT TO GO WHAT THE HECK IS THIS.
+            SDL_Event e; bool quit = false; while( quit == false ) { while( SDL_PollEvent( &e )) { if( e.type == SDL_QUIT ) quit = true;}}
         }
     }
 
-    //Free resources and close SDL
+    // free resources, close SDL
     close();
 
     return 0;
