@@ -11,9 +11,9 @@ bool loadMedia();
 void close();
 
 // window, surface, background image
-SDL_Window* gWindow = NULL;
-SDL_Surface* gScreenSurface = NULL;
-SDL_Surface* gImageToLoad = NULL;
+SDL_Window* gWindow = nullptr;
+SDL_Surface* gScreenSurface = nullptr;
+SDL_Surface* gImageToLoad = nullptr;
 
 bool init()
 {
@@ -30,7 +30,7 @@ bool init()
     {
         //Create window
         gWindow = SDL_CreateWindow( "Zen Garden", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-        if( gWindow == NULL )
+        if( gWindow == nullptr )
         {
             printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
             success = false;
@@ -52,7 +52,7 @@ bool loadMedia()
 
     // Load bg image
     gImageToLoad = SDL_LoadBMP("..\\hello_world.bmp" );
-    if(gImageToLoad == NULL )
+    if(gImageToLoad == nullptr )
     {
         printf( "Unable to load image %s! SDL Error: %s\n", "hello_world.bmp", SDL_GetError() );
         success = false;
@@ -67,8 +67,8 @@ void close()
     SDL_FreeSurface(gImageToLoad );
     SDL_DestroyWindow( gWindow );
 
-    gImageToLoad = NULL;
-    gWindow = NULL;
+    gImageToLoad = nullptr;
+    gWindow = nullptr;
 
     SDL_Quit();
 }
@@ -90,12 +90,12 @@ int main( int argc, char* args[] )
         else
         {
             // apply bg image
-            SDL_BlitSurface(gImageToLoad, NULL, gScreenSurface, NULL );
+            SDL_BlitSurface(gImageToLoad, nullptr, gScreenSurface, nullptr );
             SDL_UpdateWindowSurface( gWindow );
 
             // hack to get window to stay up
             // THIS HAS GOT TO GO WHAT THE HECK IS THIS.
-            SDL_Event e; bool quit = false; while( quit == false ) { while( SDL_PollEvent( &e )) { if( e.type == SDL_QUIT ) quit = true;}}
+            SDL_Event e; bool quit = false; while(!quit) { while( SDL_PollEvent(&e )) { if(e.type == SDL_QUIT ) quit = true;}}
         }
     }
 
