@@ -51,7 +51,7 @@ bool loadMedia()
     bool success = true;
 
     // Load bg image
-    gImageToLoad = SDL_LoadBMP("C:\\Users\\samma\\CLionProjects\\zen_garden\\hello_world.bmp" );
+    gImageToLoad = SDL_LoadBMP("..\\hello_world.bmp" );
     if(gImageToLoad == NULL )
     {
         printf( "Unable to load image %s! SDL Error: %s\n", "hello_world.bmp", SDL_GetError() );
