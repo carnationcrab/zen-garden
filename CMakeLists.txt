@@ -11,6 +11,8 @@ include_directories(${SDL2_INCLUDE_DIR})
 
 add_executable(zen_garden main.cpp
         Creature.cpp
-        Creature.h)
+        Creature.h
+        Screen.cpp
+        Screen.h)
 
 target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARY})

@@ -92,6 +92,12 @@
 		<Unit filename="C:/Repos/zen-garden/Creature.h">
 			<Option target="zen_garden"/>
 		</Unit>
+		<Unit filename="C:/Repos/zen-garden/Screen.cpp">
+			<Option target="zen_garden"/>
+		</Unit>
+		<Unit filename="C:/Repos/zen-garden/Screen.h">
+			<Option target="zen_garden"/>
+		</Unit>
 		<Unit filename="C:/Repos/zen-garden/main.cpp">
 			<Option target="zen_garden"/>
 		</Unit>
