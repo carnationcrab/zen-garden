@@ -56,6 +56,13 @@ build CMakeFiles/zen_garden.dir/main.cpp.obj: CXX_COMPILER__zen_garden_unscanned
   OBJECT_DIR = CMakeFiles\zen_garden.dir
   OBJECT_FILE_DIR = CMakeFiles\zen_garden.dir
 
+build CMakeFiles/zen_garden.dir/Creature.cpp.obj: CXX_COMPILER__zen_garden_unscanned_Debug C$:/Users/samma/CLionProjects/zen_garden/Creature.cpp || cmake_object_order_depends_target_zen_garden
+  DEP_FILE = CMakeFiles\zen_garden.dir\Creature.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/SDL2-devel-2.28.5-mingw/SDL2-2.28.5/x86_64-w64-mingw32/include/SDL2
+  OBJECT_DIR = CMakeFiles\zen_garden.dir
+  OBJECT_FILE_DIR = CMakeFiles\zen_garden.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target zen_garden
@@ -64,7 +71,7 @@ build CMakeFiles/zen_garden.dir/main.cpp.obj: CXX_COMPILER__zen_garden_unscanned
 #############################################
 # Link the executable zen_garden.exe
 
-build zen_garden.exe: CXX_EXECUTABLE_LINKER__zen_garden_Debug CMakeFiles/zen_garden.dir/main.cpp.obj | C$:/SDL2-devel-2.28.5-mingw/SDL2-2.28.5/x86_64-w64-mingw32/lib/libSDL2main.a C$:/SDL2-devel-2.28.5-mingw/SDL2-2.28.5/x86_64-w64-mingw32/lib/libSDL2.dll.a
+build zen_garden.exe: CXX_EXECUTABLE_LINKER__zen_garden_Debug CMakeFiles/zen_garden.dir/main.cpp.obj CMakeFiles/zen_garden.dir/Creature.cpp.obj | C$:/SDL2-devel-2.28.5-mingw/SDL2-2.28.5/x86_64-w64-mingw32/lib/libSDL2main.a C$:/SDL2-devel-2.28.5-mingw/SDL2-2.28.5/x86_64-w64-mingw32/lib/libSDL2.dll.a
   FLAGS = -g
   LINK_LIBRARIES = -lmingw32  -mwindows  C:/SDL2-devel-2.28.5-mingw/SDL2-2.28.5/x86_64-w64-mingw32/lib/libSDL2main.a  C:/SDL2-devel-2.28.5-mingw/SDL2-2.28.5/x86_64-w64-mingw32/lib/libSDL2.dll.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\zen_garden.dir
