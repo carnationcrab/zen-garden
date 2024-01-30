@@ -1,3 +1,0 @@
-C:/Users/samma/CLionProjects/zen_garden/cmake-build-debug/CMakeFiles/zen_garden.dir
-C:/Users/samma/CLionProjects/zen_garden/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/samma/CLionProjects/zen_garden/cmake-build-debug/CMakeFiles/rebuild_cache.dir

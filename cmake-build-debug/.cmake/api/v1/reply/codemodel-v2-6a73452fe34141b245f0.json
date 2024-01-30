@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/samma/CLionProjects/zen_garden/cmake-build-debug",
-		"source" : "C:/Users/samma/CLionProjects/zen_garden"
+		"build" : "C:/Repos/zen-garden/cmake-build-debug",
+		"source" : "C:/Repos/zen-garden"
 	},
 	"version" : 
 	{
