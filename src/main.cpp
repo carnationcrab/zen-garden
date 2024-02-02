@@ -5,6 +5,7 @@
 
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
+#include "Utils.hpp"
 
 int main(int argc, char* args[]) 
 {
