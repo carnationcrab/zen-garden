@@ -4,8 +4,8 @@
 
 #include "Entity.hpp"
 
-Entity::Entity(float p_x, float p_y, SDL_Texture* p_tx)
-:x(p_x), y(p_y), tx(p_tx)
+Entity::Entity(Vector2f p_pos, SDL_Texture* p_tx)
+:pos(p_pos), tx(p_tx)
 {
 
 	// :x(p_x) member is the same as x = p_x
@@ -17,16 +17,6 @@ Entity::Entity(float p_x, float p_y, SDL_Texture* p_tx)
 }
 
 // restricted
-float Entity::getX()
-{
-	return x;
-}
-
-float Entity::getY()
-{
-	return y;
-}
-
 SDL_Texture* Entity::getTx()
 {
 	return tx;
