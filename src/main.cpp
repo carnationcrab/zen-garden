@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
+#include <vector>
 
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
@@ -24,8 +25,16 @@ int main(int argc, char* args[])
 	// render textures
 	SDL_Texture* tx_grass = window.loadTexture("res/gfx/ground_grass_1.png");
 
-	Entity entity0(50, 50, tx_grass);
-	Entity entity1(50, 50, tx_grass);
+	std::vector<Entity> entities =
+	{
+		Entity(0, 0, tx_grass),
+		Entity(30, 0, tx_grass),
+		Entity(30, 30, tx_grass),
+	};
+
+	// {
+	//entities.emplace_back(e)
+	// }
 
 	bool gameRunning = true;
 	SDL_Event event;
@@ -41,7 +50,12 @@ int main(int argc, char* args[])
 
 		window.clear();
 
-		window.render(entity0);
+		// renders all entities -- is this slower than a normal for loop?
+		for (Entity& ent : entities)
+		{
+			window.render(ent);
+		}
+
 		window.display();
 	}
 
