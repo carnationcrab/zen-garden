@@ -1,4 +1,48 @@
-# Setting up a New C++ Project with SDL2 (sublime)
+# Notes
+
+## Project notes
+
+nothing here yet...
+
+## Notes on some choices:
+
+`#pragma once` is so includes don't get added more than once
+
+### structs vs classes
+
+classes are private by default, structs are public by default
+
+I read a single post on stack overflow when making the design decisions on structs vs classes, and user Zitrax said:
+
+"I would recommend you:
+
+use struct for plain-old-data structures without any class-like features;
+use class when you make use of features such as private or protected members, non-default constructors and operators, etc."
+
+Who am I to argue? I have followed this plan.
+
+### Member Initialization
+Whenever possible, I favor the structure:
+
+```
+RenderWindow::RenderWindow(const char* p_title, int p_width, int p_height)
+	:window(NULL), renderer(NULL)
+{
+
+}
+```
+
+over this one:
+
+```
+RenderWindow::RenderWindow(const char* p_title, int p_width, int p_height)
+{
+	window = NULL;
+	renderer = NULL;
+}
+```
+
+because fast.
 
 ## Steps used to make this repo
 
@@ -83,7 +127,7 @@ ugh that is annoying I should fix that.
 - `./bin/debug/main` runs the project
 
 *src* [.cpp] file is for cpp files.
-*include* [.h] file is for header files
+*include* [.hpp] file is for header files
 *include* [~] file is for resource files (assets, graphics, sound, etc.)
 
 open new package in sublime

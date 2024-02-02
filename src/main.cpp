@@ -27,9 +27,9 @@ int main(int argc, char* args[])
 
 	std::vector<Entity> entities =
 	{
-		Entity(0, 0, tx_grass),
-		Entity(30, 0, tx_grass),
-		Entity(30, 30, tx_grass),
+		Entity(Vector2f(0,0), tx_grass),
+		Entity(Vector2f(30, 0), tx_grass),
+		Entity(Vector2f(30, 30), tx_grass),
 	};
 
 	// {
