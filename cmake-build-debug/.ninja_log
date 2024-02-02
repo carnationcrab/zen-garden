@@ -1,6 +1,0 @@
-# ninja log v5
-2	560	7214608772825978	CMakeFiles/zen_garden.dir/main.cpp.obj	62b9979d03cba2e6
-561	643	7214608773637048	zen_garden.exe	7e7da3ad39b04bb4
-19	204	7282776805209904	CMakeFiles/zen_garden.dir/Creature.cpp.obj	9166248e9044e4b7
-6	2498	7282776828187548	CMakeFiles/zen_garden.dir/main.cpp.obj	62b9979d03cba2e6
-2499	2776	7282776830934456	zen_garden.exe	9d23d96a6079994b
