@@ -133,3 +133,4 @@ ugh that is annoying I should fix that.
 open new package in sublime
 ctrl+shift+p
 Package Control/ Install Package
+

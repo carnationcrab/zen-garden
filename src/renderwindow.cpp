@@ -6,7 +6,6 @@
 #include "Entity.hpp"
 
 // member initialization :window(NULL), renderer(NULL)
-
 RenderWindow::RenderWindow(const char* p_title, int p_width, int p_height)
 	:window(NULL), renderer(NULL)
 {
@@ -33,6 +32,18 @@ SDL_Texture* RenderWindow::loadTexture(const char* p_filePath)
 	}
 
 	return texture;
+}
+
+// gopher time. (Not necessary and could be replaced with vsync)
+int RenderWindow::getRefreshRate()
+{
+	int displayIndex = SDL_GetWindowDisplayIndex(window);
+
+	SDL_DisplayMode mode;
+
+	SDL_GetDisplayMode(displayIndex, 0, &mode);
+
+	return mode.refresh_rate;
 }
 
 void RenderWindow::clear()

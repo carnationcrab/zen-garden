@@ -10,6 +10,7 @@ Entity::Entity(Vector2f p_pos, SDL_Texture* p_tx)
 
 	// :x(p_x) member is the same as x = p_x
 
+	// set current frame
 	currentFrame.x = 0;
 	currentFrame.y = 0;
 	currentFrame.w = 32;

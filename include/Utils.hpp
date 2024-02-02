@@ -6,7 +6,7 @@
 
 namespace utils
 {
-	float hireTimeInSeconds()
+	float getTimeInSeconds()
 	{
 		float t = SDL_GetTicks();
 
