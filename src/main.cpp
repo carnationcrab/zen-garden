@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "RenderWindow.hpp"
+#include "Entity.hpp"
 
 int main(int argc, char* args[]) 
 {
@@ -20,21 +21,32 @@ int main(int argc, char* args[])
 	// render window
 	RenderWindow  window("GAME v1.0", 1280, 720);
 
-	// hack to keep game running
+	// render textures
+	SDL_Texture* tx_grass = window.loadTexture("res/gfx/ground_grass_1.png");
+
+	Entity entity0(50, 50, tx_grass);
+	Entity entity1(50, 50, tx_grass);
+
 	bool gameRunning = true;
 	SDL_Event event;
 
 	while (gameRunning)
 	{
+	// hack to keep game running
 		while (SDL_PollEvent(&event))
 		{
 			if (event.type == SDL_QUIT)
 				gameRunning = false;
 		}
+
+		window.clear();
+
+		window.render(entity0);
+		window.display();
 	}
 
 	// on quit
-	window.cleanUp();
+	window.destroyWindow();
 	SDL_Quit();
 	
 	// SDL requires return 0
