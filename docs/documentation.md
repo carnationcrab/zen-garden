@@ -116,9 +116,9 @@ Every time you add an asset you MUST COPY AND PASTE res folder into debug and re
 
 ugh that is annoying I should fix that.
 
-## Notes
+### Notes
 
-### Command from Step 2
+<b>Command from Step 2</b>
 
 - `g++ -c src/*.cpp -std=c++14 -w64 -g -Wall -I include` compiles the project.
 
@@ -133,4 +133,3 @@ ugh that is annoying I should fix that.
 open new package in sublime
 ctrl+shift+p
 Package Control/ Install Package
-
