@@ -7,7 +7,7 @@
 
 // member initialization :window(NULL), renderer(NULL)
 RenderWindow::RenderWindow(const char* p_title, int p_width, int p_height)
-	:window(NULL), renderer(NULL)
+	:window(NULL), renderer(NULL), refreshRate(60)
 {
 	window = SDL_CreateWindow(p_title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, p_width, p_height, SDL_WINDOW_SHOWN);
 

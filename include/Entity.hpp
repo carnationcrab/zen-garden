@@ -13,6 +13,7 @@ public:
 	{
 		return pos;
 	}
+	
 	SDL_Texture* getTx();
 	SDL_Rect getCurrentFrame();
 private:
