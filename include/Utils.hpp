@@ -6,12 +6,5 @@
 
 namespace utils
 {
-	float TimeInSeconds()
-	{
-		float t = SDL_GetTicks();
-
-		t *= 0.001f;
-
-		return t;
-	}
+    float TimeInSeconds();
 }
