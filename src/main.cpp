@@ -47,13 +47,13 @@ int main(int argc, char* args[])
 	// timestepping (or the elapsed time in the game)
 	const float timeStep = 0.01f;
 	float accumulator = 0.0f;
-	float currentTime = utils::getTimeInSeconds();
+	float currentTime = utils::TimeInSeconds();
 
 	while (gameRunning)
 	{
 		int firstTick = SDL_GetTicks();
 
-		float newTime = utils::getTimeInSeconds();
+		float newTime = utils::TimeInSeconds();
 		float frameTime = newTime - currentTime;
 
 		// The game needs to equal a timestep to advance.
