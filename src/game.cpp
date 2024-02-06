@@ -1,7 +1,9 @@
+#include <iostream>
+
 #include "Game.hpp"
 
 Game::Game() 
-:window("ZEN_GARDEN v1.0", 1280, 720), gameRunning(true)
+:window("ZEN_GARDEN v0.01", 1280, 720), gameRunning(true), timeStepper(0.01f)
 {
     SDL_Texture* tx_grass = window.loadTexture("res/gfx/ground_grass_1.png");
 
@@ -12,9 +14,6 @@ Game::Game()
 
 void Game::run()
 {
-    const float timeStep = 0.01f;
-    float accumulator = 0.0f;
-    float currentTime = utils::TimeInSeconds();
 
     SDL_Event event;
 
@@ -22,23 +21,20 @@ void Game::run()
     {
         int firstTick = SDL_GetTicks();
 
-        float newTime = utils::TimeInSeconds();
-        float frameTime = newTime - currentTime;
+         timeStepper.update();
 
-        currentTime = newTime;
-        accumulator += frameTime;
-
-        while (accumulator >= timeStep)
+        while (SDL_PollEvent(&event))
         {
-            while (SDL_PollEvent(&event))
-            {
-                if (event.type == SDL_QUIT)
-                    gameRunning = false;
-            }
+            if (event.type == SDL_QUIT)
+                gameRunning = false;
+        }
 
-            // movement logic
+        if (timeStepper.shouldUpdate())
+        {
+            // MOVEMENT PER FRAME OCCURS HERE
 
-            accumulator -= timeStep;
+            std::cout << "step" << std::endl;
+            timeStepper.reset();
         }
 
         window.clear();
