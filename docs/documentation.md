@@ -79,7 +79,7 @@ for linux:
 	]
 }
 `
-
+For the windows script, please look at zen_garden.sublime-project and copy the script.
 3. open [name].sublime-project with sublime.
 
 4. open main.cpp
