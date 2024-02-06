@@ -23,7 +23,7 @@ void Game::run()
 
          timeStepper.update();
 
-         while (SDL_PollEvent(&event))
+        while (SDL_PollEvent(&event))
         {
             if (event.type == SDL_QUIT)
                 gameRunning = false;
