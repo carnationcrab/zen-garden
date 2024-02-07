@@ -6,7 +6,7 @@
 #include "Entity.hpp"
 
 Entity::Entity(Vector2f p_pos, SDL_Texture* p_tx)
-    : pos(p_pos), tx(p_tx)
+:pos(p_pos), tx(p_tx)
 {
     assert(p_tx && "Null texture passed to Entity constructor!");
 

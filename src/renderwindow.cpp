@@ -8,7 +8,7 @@
 
 // Member initialization :window(nullptr), renderer(nullptr)
 RenderWindow::RenderWindow(const char* p_title, int p_width, int p_height)
-    : window(nullptr), renderer(nullptr), refreshRate(60)
+:window(nullptr), renderer(nullptr), refreshRate(60)
 {
     assert(p_title && "Null title passed to RenderWindow constructor!");
 

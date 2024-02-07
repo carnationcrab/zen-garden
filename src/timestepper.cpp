@@ -3,7 +3,7 @@
 #include <cassert>
 
 TimeStepper::TimeStepper(float timeStep)
-    : accumulator(0.0f), currentTime(utils::TimeInSeconds()), timeStep(timeStep)
+:accumulator(0.0f), currentTime(utils::TimeInSeconds()), timeStep(timeStep)
 {
     assert(timeStep >= 0.0f && "Negative time step in TimeStepper constructor!");
 }
