@@ -1,27 +1,30 @@
 #include <iostream>
+#include <cassert>
 
 #include "Game.hpp"
 
 Game::Game() 
-:window("ZEN_GARDEN v0.01", 1280, 720), gameRunning(true), timeStepper(0.01f)
+    : window("ZEN_GARDEN v0.01", 1280, 720), gameRunning(true), timeStepper(0.01f)
 {
     SDL_Texture* tx_grass = window.loadTexture("res/gfx/ground_grass_1.png");
+    assert(tx_grass && "Failed to load texture!");
 
     entities.emplace_back(Vector2f(0, 0), tx_grass);
     entities.emplace_back(Vector2f(30, 0), tx_grass);
     entities.emplace_back(Vector2f(30, 30), tx_grass);
+    
+    assert(!entities.empty() && "Entities vector is empty!");
 }
 
 void Game::run()
 {
-
     SDL_Event event;
 
     while (gameRunning)
     {
         int firstTick = SDL_GetTicks();
 
-         timeStepper.update();
+        timeStepper.update();
 
         while (SDL_PollEvent(&event))
         {

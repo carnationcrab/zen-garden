@@ -10,7 +10,7 @@ int main(int argc, char* args[])
     }
     catch (const std::exception& e)
     {
-        std::cerr << "Exception occurred: Game failed to launch. ERROR:" << e.what() << std::endl;
+        std::cerr << "An exception occurred: " << e.what() << std::endl;
         return -1;
     }
 }

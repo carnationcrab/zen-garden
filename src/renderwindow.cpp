@@ -1,80 +1,91 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
+#include <cassert>
 
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
 
-// member initialization :window(NULL), renderer(NULL)
+// Member initialization :window(nullptr), renderer(nullptr)
 RenderWindow::RenderWindow(const char* p_title, int p_width, int p_height)
-	:window(NULL), renderer(NULL), refreshRate(60)
+    : window(nullptr), renderer(nullptr), refreshRate(60)
 {
-	window = SDL_CreateWindow(p_title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, p_width, p_height, SDL_WINDOW_SHOWN);
+    assert(p_title && "Null title passed to RenderWindow constructor!");
 
-	if (window == NULL)
-	{
-		std::cout << "SDL_CreateWindow failed to load window! ERROR:" << SDL_GetError() << std::endl;
-	}
+    window = SDL_CreateWindow(p_title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, p_width, p_height, SDL_WINDOW_SHOWN);
 
-	// creates renderer. -1 is a hack to choose first graphics driver that satisfies all requirements
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    assert(window && "SDL_CreateWindow failed to load window!");
+
+    // Creates renderer. -1 chooses the first graphics driver that satisfies all requirements
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+
+    assert(renderer && "SDL_CreateRenderer failed to create renderer!");
 }
 
 SDL_Texture* RenderWindow::loadTexture(const char* p_filePath)
 {
-	SDL_Texture* texture = NULL;
+    assert(p_filePath && "Null file path passed to RenderWindow::loadTexture!");
 
-	texture = IMG_LoadTexture(renderer, p_filePath);
+    SDL_Texture* texture = IMG_LoadTexture(renderer, p_filePath);
 
-	if (texture == NULL)
-	{
-		std::cout << "SDL_Texture failed to load textures! ERROR:" << SDL_GetError() << std::endl;
-	}
+    assert(texture && "SDL_Texture failed to load textures!");
 
-	return texture;
+    return texture;
 }
 
-// gopher time. (Not necessary and could be replaced with vsync)
+// Gopher time
 int RenderWindow::getRefreshRate()
 {
-	int displayIndex = SDL_GetWindowDisplayIndex(window);
+    assert(window && "Null window in RenderWindow::getRefreshRate!");
 
-	SDL_DisplayMode mode;
+    int displayIndex = SDL_GetWindowDisplayIndex(window);
 
-	SDL_GetDisplayMode(displayIndex, 0, &mode);
+    SDL_DisplayMode mode;
 
-	return mode.refresh_rate;
+    SDL_GetDisplayMode(displayIndex, 0, &mode);
+
+    assert(mode.refresh_rate >= 0 && "Negative refresh rate in RenderWindow::getRefreshRate!");
+
+    return mode.refresh_rate;
 }
 
 void RenderWindow::clear()
 {
-	SDL_RenderClear(renderer);
+    assert(renderer && "Null renderer in RenderWindow::clear!");
+
+    SDL_RenderClear(renderer);
 }
 
 void RenderWindow::render(Entity& p_entity)
 {
-	SDL_Rect src;
-	src.x = p_entity.getCurrentFrame().x;
-	src.y = p_entity.getCurrentFrame().y;
-	src.w = p_entity.getCurrentFrame().w;
-	src.h = p_entity.getCurrentFrame().h;
+    assert(renderer && "Null renderer in RenderWindow::render!");
 
-	SDL_Rect dst;
-	dst.x = p_entity.getPos().x * 4;
-	dst.y = p_entity.getPos().y * 4;
-	dst.w = p_entity.getCurrentFrame().w * 4;
-	dst.h = p_entity.getCurrentFrame().h * 4;
+    SDL_Rect src;
+    src.x = p_entity.getCurrentFrame().x;
+    src.y = p_entity.getCurrentFrame().y;
+    src.w = p_entity.getCurrentFrame().w;
+    src.h = p_entity.getCurrentFrame().h;
 
-	SDL_RenderCopy(renderer, p_entity.getTx(), &src, &dst);
+    SDL_Rect dst;
+    dst.x = p_entity.getPos().x * 4;
+    dst.y = p_entity.getPos().y * 4;
+    dst.w = p_entity.getCurrentFrame().w * 4;
+    dst.h = p_entity.getCurrentFrame().h * 4;
+
+    SDL_RenderCopy(renderer, p_entity.getTx(), &src, &dst);
 }
 
 void RenderWindow::display()
 {
-	SDL_RenderPresent(renderer);
+    assert(renderer && "Null renderer in RenderWindow::display!");
+
+    SDL_RenderPresent(renderer);
 }
 
-// on quit
+// On quit
 void RenderWindow::destroyWindow()
 {
-	SDL_DestroyWindow(window);
+    assert(window && "Null window in RenderWindow::destroyWindow!");
+
+    SDL_DestroyWindow(window);
 }
