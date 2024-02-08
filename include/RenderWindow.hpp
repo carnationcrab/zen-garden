@@ -12,10 +12,11 @@ public:
 
 	int getRefreshRate();
 
-	void destroyWindow();
 	void clear();
 	void render(Entity& p_entity);
 	void display();
+
+	void destroyWindow();
 private:
 	SDL_Window* window;
 	SDL_Renderer* renderer;

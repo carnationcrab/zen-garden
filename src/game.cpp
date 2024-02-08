@@ -4,7 +4,7 @@
 #include "Game.hpp"
 
 Game::Game() 
-:window("ZEN_GARDEN v0.01", 1280, 720), gameRunning(true), timeStepper(0.01f)
+:window("ZEN_GARDEN v0.01", 1280, 720), timeStepper(0.01f), gameRunning(true)
 {
     SDL_Texture* tx_grass = window.loadTexture("res/gfx/ground_grass_1.png");
     assert(tx_grass && "Failed to load texture!");

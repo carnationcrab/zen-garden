@@ -13,7 +13,7 @@ public:
     void run();
 private:
     RenderWindow window;
+    TimeStepper timeStepper;
     std::vector<Entity> entities;
     bool gameRunning;
-    TimeStepper timeStepper;
 };

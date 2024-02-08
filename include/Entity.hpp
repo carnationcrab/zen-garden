@@ -16,7 +16,7 @@ public:
 	SDL_Texture* getTx();
 	SDL_Rect getCurrentFrame();
 private:
+	SDL_Texture* tx;
 	Vector2f pos;
 	SDL_Rect currentFrame;
-	SDL_Texture* tx;
 };
