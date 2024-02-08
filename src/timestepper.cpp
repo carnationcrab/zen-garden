@@ -32,3 +32,15 @@ void TimeStepper::reset()
 
     accumulator -= timeStep;
 }
+
+float TimeStepper::getFramerate() const 
+{
+    // Ensure there's no division by zero
+    if (accumulator > 0.0f) 
+    {
+        return 1.0f / accumulator;
+    } else 
+    {
+        return 0.0f;  // Indicate division by zero (or very low frame rate)
+    }
+}

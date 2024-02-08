@@ -36,7 +36,7 @@ void Game::run()
         {
             // MOVEMENT PER FRAME OCCURS HERE
 
-            std::cout << "step" << std::endl;
+            std::cout << timeStepper.getFramerate() << std::endl;
             timeStepper.reset();
         }
 
