@@ -1,3 +1,16 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  Zen-Garden.vcxproj -> C:\ZenGarden\Zen-Garden\bin\Debug-x64\Zen-Garden\Zen-Garden.dll
+  Application.cpp
+C:\zen-garden\Zen-Garden\src\ZenGarden\Math.h(30,5): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\zen-garden\Zen-Garden\src\ZenGarden\Math.h(30,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\zen-garden\Zen-Garden\src\ZenGarden\Application.h(24,16): warning C4251: 'ZenGarden::Application::window': class 'RenderWindow' needs to have dll-interface to be used by clients of class 'ZenGarden::Application'
+C:\zen-garden\Zen-Garden\src\ZenGarden\RenderWindow.h(8,7): message : see declaration of 'RenderWindow'
+C:\zen-garden\Zen-Garden\src\ZenGarden\Application.h(25,15): warning C4251: 'ZenGarden::Application::timeStepper': class 'TimeStepper' needs to have dll-interface to be used by clients of class 'ZenGarden::Application'
+C:\zen-garden\Zen-Garden\src\ZenGarden\Timestepper.h(3,7): message : see declaration of 'TimeStepper'
+C:\zen-garden\Zen-Garden\src\ZenGarden\Application.h(26,23): warning C4251: 'ZenGarden::Application::entities': class 'std::vector<Entity,std::allocator<Entity>>' needs to have dll-interface to be used by clients of class 'ZenGarden::Application'
+C:\zen-garden\Zen-Garden\src\ZenGarden\Application.h(26,8): message : see declaration of 'std::vector<Entity,std::allocator<Entity>>'
+  Zen-Garden.vcxproj -> C:\zen-garden\bin\Debug-x64\Zen-Garden\Zen-Garden.dll
+  C:\zen-garden\bin\Debug-x64\Zen-Garden\Zen-Garden.dll
+  1 File(s) copied
+  C:\zen-garden\bin\Debug-x64\Zen-Garden\Zen-Garden.pdb
+  1 File(s) copied

@@ -10,7 +10,7 @@ namespace ZenGarden
 	Application::Application()
 	:window("ZEN_GARDEN v0.01", 1280, 720), timeStepper(0.01f), gameRunning(true)
 	{
-        SDL_Texture* tx_grass = window.loadTexture("C:/ZenGarden/Zen-Garden/Zen-Garden/res/gfx/ground_grass_1.png");
+        SDL_Texture* tx_grass = window.loadTexture("C:/zen-garden/Zen-Garden/res/gfx/ground_grass_1.png");
 		assert(tx_grass && "Game Constructor: Failed to load texture!");
 
 		entities.emplace_back(Vector2f(0, 0), tx_grass);
