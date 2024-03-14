@@ -4,7 +4,7 @@ This application runs in Visual Studio 2022.
 
 ## Running the Project
 
-open sublime project. While in main, ctrl+b or f7.
+ensure you have all dependencies in your c drive. Hit run. Running builds Zen Garden into a dll. A script moves the dll into Sandbox and then Sandbox is run as an exe.
 
 ## Dependencies (windows)
 
